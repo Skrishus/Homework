@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class FactorialCalculator {
+    public static int factorial(int n) {
+        if (n <= 1) {
+            return 1; // base case: 0! and 1! are both 1
+        }
+        return n * factorial(n - 1); // recursive case: n! = n * (n-1)!
+    }
+
+    public static void main(String[] args) {
+        // Get input from user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt();
+
+        // Call the factorial method and display the result
+        int result = factorial(n);
+        System.out.println(n + "! = " + result);
+    }
+}
