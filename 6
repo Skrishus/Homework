@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class PowerCalculator {
+    public static int power(int a, int n) {
+        if (n == 0) {
+            return 1; // base case: a^0 is 1
+        }
+        return a * power(a, n - 1); // recursive case: a^n = a * a^(n-1)
+    }
+
+    public static void main(String[] args) {
+        // Get input from user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the base number (a): ");
+        int a = scanner.nextInt();
+        System.out.print("Enter the exponent (n): ");
+        int n = scanner.nextInt();
+
+        // Call the power method and display the result
+        int result = power(a, n);
+        System.out.println(a + "^" + n + " = " + result);
+    }
+}
