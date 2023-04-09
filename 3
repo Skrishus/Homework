@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class PrimeChecker {
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false; // 1 is not prime
+        }
+        if (n <= 3) {
+            return true; // 2 and 3 are prime
+        }
+        if (n % 2 == 0 || n % 3 == 0) {
+            return false; // multiples of 2 and 3 are not prime
+        }
+        for (int i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false; // multiples of i and i+2 are not prime
+            }
+        }
+        return true; // n is prime
+    }
+
+    public static void main(String[] args) {
+        // Get input from user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt();
+
+        // Check if the number is prime
+        if (isPrime(n)) {
+            System.out.println(n + " is a prime number.");
+        } else {
+            System.out.println(n + " is not a prime number.");
+        }
+    }
+}
