@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class FibonacciCalculator {
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0; // base case: F0 is 0
+        }
+        if (n == 1) {
+            return 1; // base case: F1 is 1
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2); // recursive case: Fn = Fn-1 + Fn-2
+    }
+
+    public static void main(String[] args) {
+        // Get input from user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt();
+
+        // Call the fibonacci method and display the result
+        int result = fibonacci(n);
+        System.out.println("The " + n + "-th element in the Fibonacci sequence is: " + result);
+    }
+}
